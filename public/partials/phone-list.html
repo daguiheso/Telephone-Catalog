@@ -2,19 +2,21 @@
   <div class="row">
     <div class="col-md-2">
       <!--Sidebar content-->
-	    <input ng-model="query" placeholder="Search">
-	    Sort by:
-	    <select ng-model="orderProp">
+	    <input class="form-control" ng-model="query" placeholder="Search">
+	    Sort by
+	    <select class="form-control" ng-model="orderProp">
 	      <option value="name">Alphabetical</option>
 	      <option value="age">Newest</option>
 	    </select>
+  	</div>
+    <div class="col-md-10">
 	    <ul class="phones">
 	      <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
-	      	<a href="#/phones/{{ phone.id }}" class=" thumb"><img ng-src="{{ phone.imageUrl }}"></a>
-	        <a href="#/phones/{{ phone.id }}">{{ phone.name }}</a>
-	        <p>{{phone.snippet}}</p>
+	      	<a href="#/phones/{{ phone.id }}" class="thumb"><img ng-src="{{ phone.imageUrl }}"></a>
+	        <a class="caption" href="#/phones/{{ phone.id }}">{{ phone.name }}</a>
+	        <p class="caption">{{ phone.snippet }}</p>
 	      </li>
 	    </ul>
-    </div>
+	   </div>
   </div>
 </div>
